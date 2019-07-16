@@ -208,10 +208,6 @@ function handleEditItemNameSubmit() {
   });
 }
 
-// this function will be our callback when the page loads. it's responsible for
-// initially rendering the shopping list, and activating our individual functions
-// that handle new item submission and user clicks on the "check" and "delete" buttons
-// for individual shopping list items.
 function handleShoppingList() {
   renderShoppingList();
   handleNewItemSubmit();
@@ -224,37 +220,4 @@ function handleShoppingList() {
   handleEditItemNameSubmit();
 }
 
-// when the page loads, call `handleShoppingList`
 $(handleShoppingList);
-
-// From Thinkful solution: for disabling check/delete buttons while editing:
-// function generateItemElement(item) {
-//   let itemMainTitle;
-//   if (item.isEditing) {
-//     itemMainTitle = `
-//       <form id="edit-item-name-form">
-//         <input type="text" name="edit-name" class="js-edit-item-name" value="${item.name}" />
-//       </form>
-//     `;
-//   } else {
-//     itemMainTitle = `
-//       <span class="shopping-item js-shopping-item ${item.checked ? "shopping-item__checked" : ''}">
-//         ${item.name}
-//       </span>`;
-//   }
-
-//   const disabledStatus = item.isEditing ? 'disabled' : '';
-
-//   return `
-//     <li data-item-id="${item.id}">
-//       ${itemMainTitle}
-//       <div class="shopping-item-controls">
-//         <button class="shopping-item-toggle js-item-toggle" ${disabledStatus}>
-//             <span class="button-label">check</span>
-//         </button>
-//         <button class="shopping-item-delete js-item-delete" ${disabledStatus}>
-//             <span class="button-label">delete</span>
-//         </button>
-//       </div>
-//     </li>`;
-// }
